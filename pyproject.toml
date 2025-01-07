@@ -1,0 +1,22 @@
+[project]
+name = "goit-pythonweb-hw-01"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Oleksii Aleksieiev",email = "reneguarde@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "logging (>=0.4.9.6,<0.5.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+pytest = "^8.3.4"
+
