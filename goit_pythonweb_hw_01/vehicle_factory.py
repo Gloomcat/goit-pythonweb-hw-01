@@ -1,6 +1,14 @@
 import logging
 from abc import ABC, abstractmethod
 
+logger = logging.getLogger("VehicleFactory")
+logger.setLevel(logging.INFO)
+
+ch = logging.StreamHandler()
+ch.setLevel(logging.INFO)
+
+logger.addHandler(ch)
+
 
 class Vehicle(ABC):
     def __init__(self, make: str, model: str, region: str) -> None:
@@ -15,12 +23,12 @@ class Vehicle(ABC):
 
 class Car(Vehicle):
     def start_engine(self) -> None:
-        logging.info(f"{self.make} {self.model} {self.region}: Engine started")
+        logger.info(f"{self.make} {self.model} {self.region}: Engine started")
 
 
 class Motorcycle(Vehicle):
     def start_engine(self) -> None:
-        logging.info(f"{self.make} {self.model} {self.region}: Motor started")
+        logger.info(f"{self.make} {self.model} {self.region}: Motor started")
 
 
 class VehicleFactory(ABC):
